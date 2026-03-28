@@ -14,6 +14,8 @@ class Register(models.Model):
     sendemail = models.BooleanField(default=False)
     sendphone = models.BooleanField(default=False)
     no = models.BooleanField(default=False)
+    customer = models.CharField(max_length=255, default='')
+    payment_method = models.CharField(max_length=255, default='')
 
     def __str__(self):
         return self.firstname
