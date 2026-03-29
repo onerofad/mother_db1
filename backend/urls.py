@@ -28,7 +28,7 @@ router.register('supports', SupportView, 'support')
 router.register('registerwatchers', RegisterWatcherView, 'registerwatcher')
 router.register('chats', ChatView, 'chat')
 router.register('cards', CardView, 'card')
-router.register('payments', PaymentsView, 'payment')
+router.register('payments', PaymentsView, 'payments')
 
 
 
