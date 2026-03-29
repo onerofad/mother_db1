@@ -113,7 +113,7 @@ class Payment(models.Model):
     user_email = models.EmailField()
 
 class Payments(models.Model):
-    amount = models.CharField(max_length=10)
+    amount = models.FloatField(max_length=10, default=0)
     currency = models.CharField(max_length=10, default="usd")
     payment_id = models.CharField(max_length=255, null=True, blank=True)
     status = models.CharField(max_length=255, null=True, blank=True)
@@ -121,7 +121,7 @@ class Payments(models.Model):
     payment_method = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     email = models.EmailField()
-    request_id = models.CharField(max_length=255, blank=True, null=True)
+    request_id = models.IntegerField(default=0, blank=True, null=True)
     
 
 
