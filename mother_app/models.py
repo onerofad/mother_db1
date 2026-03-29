@@ -111,6 +111,13 @@ class Payment(models.Model):
     stripe_payment_id = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     user_email = models.EmailField()
+
+class Payments(models.Model):
+    amount = models.CharField(max_length=10)
+    currency = models.CharField(max_length=10, default="usd")
+    stripe_payment_id = models.CharField(max_length=255, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    user_email = models.EmailField()
     
 
 

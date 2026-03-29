@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Register, MakeRequest, Support, RegisterWatcher, Chats, Cards, Payment
+from .models import Register, MakeRequest, Support, RegisterWatcher, Chats, Cards, Payment, Payments
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,6 +31,10 @@ class CardSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Cards
 
+class PaymentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = Payments
 
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Register, MakeRequest, Support, RegisterWatcher, Chats, Cards, Payment
-from .serializers import RegisterSerializer, MakeRequestSerializer, SupportSerializer, RegisterWatcherSerializer, ChatSerializer, CardSerializer, PaymentSerializer
+from .models import Register, MakeRequest, Support, RegisterWatcher, Chats, Cards, Payment, Payments
+from .serializers import RegisterSerializer, MakeRequestSerializer, SupportSerializer, RegisterWatcherSerializer, ChatSerializer, CardSerializer, PaymentSerializer, PaymentsSerializer
 
 # stripe things
 import stripe
@@ -35,6 +35,10 @@ class ChatView(viewsets.ModelViewSet):
 class CardView(viewsets.ModelViewSet):
     queryset = Cards.objects.all()
     serializer_class = CardSerializer
+
+class PaymentsView(viewsets.ModelViewSet):
+    queryset = Payments.objects.all()
+    serializer_class = PaymentsSerializer
 
 class PaymentListView(ListAPIView):
     queryset = Payment.objects.all()
