@@ -120,7 +120,8 @@ class Payments(models.Model):
     customer_id = models.CharField(max_length=255, null=True, blank=True)
     payment_method = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    user_email = models.EmailField()
+    email = models.EmailField()
+    request_id = models.CharField(max_length=255, blank=True, null=True)
     
 
 
