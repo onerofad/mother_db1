@@ -37,7 +37,7 @@ class CardView(viewsets.ModelViewSet):
     serializer_class = CardSerializer
 
 class PaymentsView(viewsets.ModelViewSet):
-    queryset = Payments.objects.order_by('created_at').all()
+    queryset = Payments.objects.all().order_by('-created_at')
     serializer_class = PaymentsSerializer
 
 class PaymentListView(ListAPIView):
