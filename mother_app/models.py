@@ -121,6 +121,7 @@ class Payments(models.Model):
     payment_method = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     email = models.EmailField()
+    to_email = models.EmailField(default="")
     request_id = models.IntegerField(default=0, blank=True, null=True)
     
 
